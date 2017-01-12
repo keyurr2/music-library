@@ -1,0 +1,89 @@
+{% extends "rkmusic/base.html" %}
+{% load static %}
+{% block content %}
+<section id="content"><div class="ic">More Website Templates @ TemplateMonster.com. November 21, 2011!</div>
+				<div class="main">
+					<div class="content-padding-2">
+						<div class="container_12">
+							<div class="wrapper">
+								<article class="grid_8">
+									<div class="padding-grid-1">
+										<h3>Contact <strong>Form</strong></h3>
+										<form id="contact-form" enctype="multipart/form-data" method="post" >
+											{% csrf_token %}
+											<fieldset>
+												<label>
+													<span class="name-input">Name:</span>
+													<input name="name" type="text" value="" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''" />
+												</label>
+												<label>
+													<span class="name-input">Email:</span>	
+													<input name="email" type="email" value="" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''" />
+												</label>
+												<label>
+													<span class="name-input">Message:</span>
+													<textarea name="message" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''"></textarea>
+												</label>						
+											</fieldset>
+											<div class="link-form">
+												<a class="link link-margin" href="#contact-form" onClick="document.getElementById('contact-form').reset()">Clear</a>
+												<a class="link" onClick="validateForm();">Send</a>
+											</div> 
+											<div class="clear"></div>		
+										</form>	
+									</div>
+								</article>
+								<article class="grid_4 alpha">
+									<div class="padding-grid-3">
+										<h3>Contact <strong>Info</strong></h3>
+										<div class="wrapper p2">
+											<figure class="style-img-2 fleft">
+												<iframe width="252" height="195" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.5255886232135!2d72.52479138070153!3d23.004466523165974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x34a900d30bb9ee35!2sAshapura+Mandir!5e0!3m2!1sen!2sin!4v1481387686694"></iframe>
+											</figure>
+										</div>
+										<dl class="list-4">
+											<dt>12, Krishnasagar Society, Jivaraj Park<br>Ahmedabad, Gujarat.</dt>
+											<dd>Telephone: +91 972 284 3263</dd>
+											<dd>E-mail: <a class="link" href="#">info@rkmail.com</a></dd>
+										</dl>
+									</div>
+								</article>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="block"></div>
+</section>
+<script type="text/javascript">
+function validateForm() {
+    var x = document.forms["contact-form"]["name"].value;
+    var y = document.forms["contact-form"]["email"].value;
+    var atpos = y.indexOf("@");
+    var dotpos = y.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=y.length || x == "") {
+        alert("Please provide valid Details.");
+        return false;
+    }
+    else {
+    	if (x.length > 30 || y.length > 50){
+    		alert("Too long name or email.");
+    		return false;
+    	} else{
+    		alert("Your queries has been submitted.");
+			$('#contact-form').submit();    
+    	}
+    }
+}
+</script>
+<!-- Hotjar Tracking Code for http://rkinfotech.comli.com/ -->
+<script type="text/javascript">
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:366190,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+{% endblock %}

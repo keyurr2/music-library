@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <title>Let's Gun Guna Ye</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{% static 'css/grid.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}" type="text/css" media="screen">
+    <script src="{% static 'js/jquery-1.6.3.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/cufon-yui.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/cufon-replace.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/Vegur_700.font.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/Vegur_400.font.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/FF-cash.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'js/easyTooltip.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/hover-image.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'js/tms-0.3.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tms_presets.js' %}"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('.slider')._TMS({
+            duration: 800,
+            easing: 'easeOutQuad',
+            preset: 'diagonalFade',
+            pagination: false,
+            slideshow: 6000,
+            banners: false,
+            waitBannerAnimation: false,
+            pauseOnHover: true
+        });
+        $("a[data-gal^='prettyVideo']").prettyPhoto({
+            animation_speed: 'normal',
+            theme: 'facebook',
+            slideshow: false,
+            autoplay_slideshow: false
+        });
+    });
+    </script>
+    <!-- Hotjar Tracking Code for http://192.168.4.125:5000 -->
+    <script type="text/javascript">
+    (function(h, o, t, j, a, r) {
+        h.hj = h.hj || function() {
+            (h.hj.q = h.hj.q || []).push(arguments)
+        };
+        h._hjSettings = {
+            hjid: 366190,
+            hjsv: 5
+        };
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script');
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    <!-- <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="{% static 'player/css/style.css' %} ">
+    <!-- // <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+    <!-- // <script src="{% static 'player/js/main.js' %} "></script>        -->
+    <script type="text/javascript">
+    setTimeout(function() {
+        document.getElementsByClassName('_hj-f5b2a1eb-9b07_pull_left')[0].style.visibility = 'hidden';
+    }, 3000);
+    </script>
+</head>
+
+<body>
+    <div class="extra">
+        <!-- header code -->
+        <header>
+            <div class="main">
+                <div class="bg-1">
+                    <h1><a href="{% url 'index' %}">Rock Band</a></h1>
+                </div>
+                <nav>
+                    <div class="menu-bg-tail">
+                        <div class="menu-bg">
+                            <div class="container_12">
+                                <div class="grid_12">
+                                    <ul class="menu">
+                                        <li class="item"><a class="active" href="{% url 'index' %}">Home</a></li>
+                                        <li class="item"><a href="{% url 'dirLevelOne' 'artists' %}">Artists</a></li>
+                                        <li><a href="{% url 'dirLevelOne' 'albumbs' %}">Albumbs</a></li>
+                                        <li><a href="{% url 'dirLevelOne' 'mixup' %}">Mixup</a></li>
+                                        <li class="item-1"><a href="{% url 'dirLevelOne' 'english' %}">English</a></li>
+                                        <!-- <li><a href="{% url 'index' %}">My Fav</a></li> -->
+                                        <li><a href="{% url 'dirLevelOne' 'contactus' %}">Contacts</a></li>
+                                    </ul>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="slider-wrapper">
+                    <div class="slider">
+                        <ul class="items">
+                            <li><img src="{% static 'images/slider-img1.jpg' %}" alt="" /></li>
+                            <li>
+                                <img src="{% static 'images/slider-img2.jpg' %}" alt="" />
+                            </li>
+                            <li>
+                                <img src="{% static 'images/slider-img3.jpg' %}" alt="" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    {% block content %} {% endblock %}
+    <footer>
+        <div class="main">
+            <div class="footer-bg">
+                <div class="container_12">
+                    <div class="wrapper">
+                        <div class="grid_12">
+                            <div class="footer-padding">
+                                <div class="wrapper">
+                                    <span class="footer-link"><span>It's just rk thought. &copy; 2016</span> <a rel="nofollow" target="_blank" class="link" href="/">RK Music </a> by Keyur Rathod</span>
+                                    <ul class="list-services">
+                                        <li>
+                                            <a class="tooltips n-1" title="Twitter" href="https://twitter.com/Kurvsmonte"></a>
+                                        </li>
+                                        <li>
+                                            <a class="tooltips n-2" title="Facebook" href="https://www.facebook.com/keyurr2/about"></a>
+                                        </li>
+                                        <li class="last">
+                                            <a class="tooltips n-3" title="Youtube" href="#"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="aligncenter">
+                                    <!-- {%FOOTER_LINK} -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    Cufon.now();
+    </script>
+    <!-- footer code -->
+</body>
+
+</html>
